@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="bmw" class="CarImpl.Bmw">
+		<constructor-arg ref="tdi"  index="1"   />
+		<constructor-arg ref="john"  index="0" />
+	</bean>
+
+	<bean id="vw" class="CarImpl.Vw">
+		
+		<property name="driver" ref="bill" />
+		<property name="engine" ref="gasoline" />
+		
+	</bean>
+
+
+	<bean id="john" class="DriverImpl.John" />
+	<bean id="bill" class="DriverImpl.Bill" />
+
+	<bean id="tdi" class="EngineImpl.Tdi" />
+	<bean id="gasoline" class="EngineImpl.Gasoline" />
+
+
+</beans>
